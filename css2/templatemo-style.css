@@ -622,7 +622,32 @@ body {
 }
 
 
+/* =========================
+   MOBILE FIX (IMPORTANT)
+   - disable hover behavior
+   - always show content
+========================= */
+@media (max-width: 768px) {
 
+    .menu-thumb .menu-info {
+        top: auto;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    .menu-thumb .menu-info h3,
+    .menu-thumb .menu-info p,
+    .menu-thumb .menu-info span,
+    .menu-thumb .menu-info button {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+     .menu-item button {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
 /*---------------------------------------
       TESTIMONIAL             
   -----------------------------------------*/
