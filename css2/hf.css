@@ -343,3 +343,19 @@
     position: relative;
     z-index: 2;
 }
+
+@media (max-width: 768px) {
+    .menu-item button {
+        display: none;
+    }
+
+    .order-btn {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .order-btn {
+        display: none;
+    }
+}
