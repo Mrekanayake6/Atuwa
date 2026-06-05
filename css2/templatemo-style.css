@@ -649,16 +649,26 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
 
-  
+    /* CONTAINER LEFT GAP FIX */
+    #menu .container {
+        padding-left: 10px !important;
+        padding-right: 20px !important;
+    }
 
+    /* ROW RESET */
     #menu .row {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
 
-   
+    /* COLUMN BALANCE */
+    #menu .col-md-4,
+    #menu .col-sm-6 {
+        padding-left: 6px !important;
+        padding-right: 10px !important;
+    }
 }
 /*---------------------------------------
       TESTIMONIAL             
