@@ -53,3 +53,76 @@ window.onload = function () {
 
 }
 
+
+function sendWhatsApp() {
+
+    let product = localStorage.getItem("name");
+    let weight = document.getElementById("productWeight").innerText;
+    let price = localStorage.getItem("price");
+    let deliveryCharge = 200;
+    let qty = document.getElementById("qty").value;
+    let totalPrice = document.getElementById("totalPrice").innerText;
+
+    let customerName = document.getElementById("customerName").value.trim();
+    let address = document.getElementById("deliveryAddress").value.trim();
+
+    // Validation
+    if (customerName === "") {
+        alert("Please enter your full name.");
+        document.getElementById("customerName").focus();
+        return;
+    }
+
+    if (customerName.length < 3) {
+        alert("Name must be at least 3 characters.");
+        document.getElementById("customerName").focus();
+        return;
+    }
+
+    if (address === "") {
+        alert("Please enter your delivery address.");
+        document.getElementById("deliveryAddress").focus();
+        return;
+    }
+
+    if (address.length < 10) {
+        alert("Address must be at least 10 characters.");
+        document.getElementById("deliveryAddress").focus();
+        return;
+    }
+
+    if (qty === "" || isNaN(qty) || qty < 1) {
+        alert("Please enter a valid quantity.");
+        document.getElementById("qty").focus();
+        return;
+    }
+
+    let message =
+        `🛒 NEW ORDER
+
+👤 Customer Name: ${customerName}
+
+📦 Product: ${product}
+⚖️ Weight: ${weight}
+💰 Unit Price: Rs. ${price}
+🔢 Quantity: ${qty}
+🚚 Delivery Charge: Rs. ${deliveryCharge}
+
+${totalPrice}
+
+📍 Delivery Address:
+${address}
+
+Thank you.`;
+
+    let phone = "94713872042"; // WhatsApp Number
+
+    let whatsappURL =
+        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+}
+
+
+
+
