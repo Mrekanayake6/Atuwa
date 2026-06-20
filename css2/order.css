@@ -325,20 +325,3 @@ select:focus {
     transform: translateX(120%);
     animation: slowSlide 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
-@keyframes slowSlide {
-    0% {
-        opacity: 0;
-        transform: translateX(120%);
-    }
-
-    60% {
-        opacity: 0.7;
-        transform: translateX(-10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
